@@ -1,11 +1,12 @@
-# source: https://www.stgraber.org/2016/04/13/lxd-2-0-docker-in-lxd-712/
 
+
+# LXC with Docker support
+# source: https://www.stgraber.org/2016/04/13/lxd-2-0-docker-in-lxd-712/
 # create container with docker profile
 lxc launch ubuntu-daily:16.04 <lxc_ct_name> -p default -p docker
 lxc exec <lxc_ct_name> -- apt update
 lxc exec <lxc_ct_name> -- apt dist-upgrade -y
 lxc exec <lxc_ct_name> -- apt install docker.io -y
-
 # if the docker image doesn't work try (if trusted!)
 lxc config set <lxc_ct_name> security.privileged true
 lxc restart <lxc_ct_name>
