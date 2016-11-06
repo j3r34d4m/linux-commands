@@ -1,6 +1,6 @@
 
 
-# LXC with Docker support
+### LXC container with Docker support
 # source: https://www.stgraber.org/2016/04/13/lxd-2-0-docker-in-lxd-712/
 # create container with docker profile
 lxc launch ubuntu-daily:16.04 <lxc_ct_name> -p default -p docker
@@ -10,3 +10,13 @@ lxc exec <lxc_ct_name> -- apt install docker.io -y
 # if the docker image doesn't work try (if trusted!)
 lxc config set <lxc_ct_name> security.privileged true
 lxc restart <lxc_ct_name>
+
+### Enable openvpn client networking
+# add tun device to a container from host
+lxc config device add <lxc_ct_name> tun unix-char path=/dev/net/tun
+# run once first time inside container
+mkdir /dev/net
+mknod /dev/net/tun c 10 200
+chmod 0666 /dev/net/tun
+
+
