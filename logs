@@ -1,0 +1,3 @@
+multitail -Cs -i /path/to/file.log -n 100 -m 1000 -p o 5
+
+multitail -Cs -i /cygdrive/c/payara-4.1.1.163-web/glassfish/domains/vvfs-payara/logs/server.log -n 100 -m 1000 -p o 5
