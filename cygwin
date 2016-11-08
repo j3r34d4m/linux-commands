@@ -1,11 +1,13 @@
-# for local user use:
+##########################################
+### SSH in Cygwin                      ###
+##########################################
+# reference for local user use:
 # http://www.howtogeek.com/howto/41560/how-to-get-ssh-command-line-access-to-windows-7-using-cygwin/
 net start sshd
 net stop sshd
 
-# for domain use:
+# reference for domain use:
 # https://microtechnology-services.github.io/2016/04/29/cygwin-sshd-on-windows-domain.html
-
 
 # I converted to domain from local user, but did not have to remove and recreate the cyg_server
 # I left the cyg_server local user running the sshd service
@@ -15,3 +17,7 @@ net stop sshd
 #    strict modes -> yes
 #    privilege separation -> yes
 # 3. re-run ssh-user-config (start cygwin term as user)
+
+# connection syntax
+# ssh DOMAIN+user@a.b.c.d
+ssh HOKIES+jpadams@198.82.152.238
