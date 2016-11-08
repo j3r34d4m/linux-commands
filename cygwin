@@ -1,14 +1,17 @@
 # for local user use:
 # http://www.howtogeek.com/howto/41560/how-to-get-ssh-command-line-access-to-windows-7-using-cygwin/
+net start sshd
+net stop sshd
 
 # for domain use:
 # https://microtechnology-services.github.io/2016/04/29/cygwin-sshd-on-windows-domain.html
 
 
-# I converted to domain from local user, all  i had to do was 
-# bring the domain user into /etc/passwd (mkpasswd -c > /etc/passwd)
-# re-run ssh-host-config according to link 2 above (start cygwin term as admin)
-# re-run ssh-user-config (start cygwin term as user)
-
-# sshd is still running under original local cyg_server user
-# I don't know if the machine starts out under domain control if the above would be possible under IT controls
+# I converted to domain from local user, but did not have to remove and recreate the cyg_server
+# I left the cyg_server local user running the sshd service
+# 
+# 1. bring the domain user into /etc/passwd (mkpasswd -c > /etc/passwd)
+# 2. re-run ssh-host-config according to link 2 above (start cygwin term as admin)
+#    strict modes -> yes
+#    privilege separation -> yes
+# 3. re-run ssh-user-config (start cygwin term as user)
