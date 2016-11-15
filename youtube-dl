@@ -1,0 +1,14 @@
+# update, might need sudo
+-U 
+
+# skips DASH stuff
+--youtube-skip-dash-manifest 
+
+# lists all formats
+-F
+
+# downloads the format from -L
+-f <#> 
+
+# If separate .mp4 video and .webm audio are downloaded, this will merge them into one file
+ffmpeg -i video.mp4 -i audio.webm -c:v copy -c:a aac -strict experimental output.mp4
