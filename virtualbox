@@ -1,0 +1,2 @@
+# resize .vdi or .vdh disk file to 100GB
+vboxmanage modifyhd <your filename> --resize 100000
