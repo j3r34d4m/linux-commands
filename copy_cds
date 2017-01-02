@@ -1,0 +1,2 @@
+# worked for Teaching Textbooks math curriculum cds in Ubuntu 15.04
+sudo  ddrescue -n -b 2048 /dev/sr0 imagename.iso logname.log
