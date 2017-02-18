@@ -12,3 +12,10 @@
 
 # If separate .mp4 video and .webm audio are downloaded, this will merge them into one file
 ffmpeg -i video.mp4 -i audio.webm -c:v copy -c:a aac -strict experimental output.mp4
+
+#-----------record live stream----------------
+youtube-dl --list-formats https://www.youtube.com/watch\?v\=6aXR-SL5L2o
+# note best quality format code (95)
+youtube-dl -f 95 -g https://www.youtube.com/watch\?v\=6aXR-SL5L2o
+# copy resulting URL
+ffmpeg -i <paste URL> -c copy output.ts
