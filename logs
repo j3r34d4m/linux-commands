@@ -1,3 +1,5 @@
 multitail -Cs -i /path/to/file.log -n 100 -m 1000 -p o 5
 
 multitail -Cs -i /cygdrive/c/payara-4.1.1.163-web/glassfish/domains/vvfs-payara/logs/server.log -n 100 -m 1000 -p o 5
+
+multitail -Cs -n 1000 -ts -em "PROD-3.0.0" -i /cygdrive/c/payara-4.1.1.163-web/glassfish/domains/vvfs-payara/logs/server.log -n 10000 -ts -em "SSB-NOTES_2017Q1_II" /cygdrive/c/payara-4.1.1.163-web/glassfish/domains/vvfs-payara/logs/server.log
