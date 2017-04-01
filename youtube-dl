@@ -19,3 +19,4 @@ youtube-dl --list-formats https://www.youtube.com/watch\?v\=6aXR-SL5L2o
 youtube-dl -f 95 -g https://www.youtube.com/watch\?v\=6aXR-SL5L2o
 # copy resulting URL
 ffmpeg -i <paste URL> -c copy output.ts
+https://www.youtube.com/channel/UCYEJv22qZvZ6gdbbuBR2PpQ - TLOS live streams
