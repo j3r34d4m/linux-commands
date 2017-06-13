@@ -1,0 +1,3 @@
+sudo mount -t cifs //landisk/media /mnt/landisk/media -o credentials=/home/jeremy/smb-landisk-media
+sudo mount -t cifs //torrent/torrents /mnt/torrent/finished -o credentials=/home/jeremy/smb-torrent-finished
+sudo mount -t cifs //landisk/netstorage /mnt/landisk/netstorage -o credentials=/home/jeremy/smb-landisk-media
