@@ -1,5 +1,8 @@
 # convert all .NEF files in current and subdirectories to .jpg
 find . -name '*.NEF' -exec convert '{}' -quality 100% '{}'.jpg \;
 
+# convert all .NEF files in only current to .jpg
+find . -maxdepth 1 -name '*.NEF' -exec convert '{}' -quality 100% '{}'.jpg \;
+
 # remove the .NEF portion of the filename after conversion above
 find . -type f -exec rename 's/NEF.jpg/jpg/' '{}' \;
