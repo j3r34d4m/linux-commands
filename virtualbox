@@ -43,6 +43,11 @@ $ VBoxManage storageattach "Win10x64" --storagectl "SATA" --port 1 --device 0 --
 # add guest addition iso (used /usr/share/virtualbox/VBoxGuestAdditions.iso)
 $ VBoxManage storageattach "Win10x64" --storagectl "SATA" --port 2 --device 0 --type dvddrive --medium /path/to/VBoxGuestAdditions.iso
 
+# make RDP available
+$ VBoxManage modifyvm "Win10x64" --vrde on
+$ VBoxManage modifyvm "Win10x64" --vrdeport 5555
+$ VBoxManage setproperty vrdeextpack "Oracle VM VirtualBox Extension Pack"
+
 # start VM
 $ VBoxManage startvm Win10x64
 $ vboxmanage startvm {"vmname" or UUID} --type headless
@@ -50,6 +55,4 @@ $ vboxmanage startvm {"vmname" or UUID} --type headless
 # remove media (on stopped VM)
 $ VBoxManage storageattach "Win10x64" --storagectl "SATA" --port 1 --device 0 --type dvddrive --medium none
 $ VBoxManage storageattach "Win10x64" --storagectl "SATA" --port 2 --device 0 --type dvddrive --medium none
-
-
 ##############################################
