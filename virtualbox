@@ -44,8 +44,11 @@ $ VBoxManage storageattach "Win10x64" --storagectl "SATA" --port 2 --device 0 --
 
 # start VM
 $ VBoxManage startvm Win10x64
+$ vboxmanage startvm {"vmname" or UUID} --type headless
 
 # remove media (on stopped VM)
 $ VBoxManage storageattach "Win10x64" --storagectl "SATA" --port 1 --device 0 --type dvddrive --medium none
 $ VBoxManage storageattach "Win10x64" --storagectl "SATA" --port 2 --device 0 --type dvddrive --medium none
+
+
 ##############################################
