@@ -21,8 +21,9 @@ $ VBoxManage modifyvm "Win10x64" --vram 128 --accelerate3d on
 # configure audio settings (used --audio pulse)
 $ VBoxManage modifyvm "Win10x64" --audio coreaudio --audiocontroller hda
 
-# configure network settings
+# configure network settings (used --nic1 bridged)
 $ VBoxManage modifyvm "Win10x64" --nic1 nat
+$ vboxmanage modifyvm "Win10x64_g3" --bridgeadapter1 br0
 
 # configure usb settings
 $ VBoxManage modifyvm "Win10x64" --usb on
@@ -33,7 +34,7 @@ $ VBoxManage createhd --filename ./Win10x64/Win10x64.vdi --size 30000
 # modify a storage controller
 $ VBoxManage storagectl "Win10x64" --name "SATA" --add sata
 
-# attache storage medium to VM
+# attach storage medium to VM
 $ VBoxManage storageattach "Win10x64" --storagectl "SATA" --port 0 --device 0 --type hdd --medium ./Win10x64/Win10x64.vdi
 
 # add windows iso
